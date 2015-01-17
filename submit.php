@@ -1,3 +1,3 @@
 <?php
 
-echo("<script>console.log('PHP: ".json_encode($_REQUEST)."');</script>");
+syslog (LOG_DEBUG , "PHP: ".json_encode($_REQUEST));
