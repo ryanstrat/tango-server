@@ -14,8 +14,6 @@ if($result = $mysqli->query("SELECT xyz_count, xyz_parcel, timestamp FROM tango 
     echo json_encode($obj);
 }
 
-$stmt->close();
-
 $mysqli->close();
 
 closelog();
