@@ -6,7 +6,8 @@ $username = "mhacksv";
 $password = "mhacksv!";
 $hostname = "192.168.1.51";
 
-syslog(LOG_DEBUG, "REQUEST: ".$_REQUEST);
+syslog(LOG_DEBUG, "REQUEST: ".$_REQUEST.toString());
+syslog(LOG_DEBUG, "XYZ_PARCEL: ".$_POST['xyz_parcel']);
 
 $conn = new mysqli($hostname, $username, $password, "mhacksv");
 
