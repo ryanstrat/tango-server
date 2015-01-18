@@ -7,7 +7,6 @@ $password = "mhacksv!";
 $hostname = "192.168.1.51";
 
 syslog(LOG_DEBUG, "REQUEST: ".$_REQUEST);
-syslog(LOG_DEBUG, "Post0: ".$_POST['timestamp']);
 
 $conn = new mysqli($hostname, $username, $password, "mhacksv");
 
@@ -15,8 +14,9 @@ $timestamp = $_POST['timestamp'];
 $ij_cols = $_POST['ij_cols'];
 $ij_rows = $_POST['ij_rows'];
 $xyz_count = $_POST['xyz_count'];
+$xyz_parcel = $_POST['xyz_parcel'];
 
-if (!$conn->query("INSERT INTO tango (ij_cols, ij_rows, xyz_count, timestamp) VALUES (".$ij_cols.",".$ij_rows.",".$xyz_count.",".$timestamp.")")) {
+if (!$conn->query("INSERT INTO tango (ij_cols, ij_rows, xyz_count, xyz_parcel, timestamp) VALUES (".$ij_cols.",".$ij_rows.",".$xyz_count.",".$xyz_parcel.",".$timestamp.")")) {
     syslog(LOG_DEBUG, "Data insert failed: (" . $conn->errno . ") " . $conn->error);
 }
 
