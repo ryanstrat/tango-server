@@ -16,7 +16,7 @@ $ij_cols = $_POST['ij_cols'];
 $ij_rows = $_POST['ij_rows'];
 $xyz_count = $_POST['xyz_count'];
 
-if (!$conn->query("INSERT INTO tango (ij_cols, ij_rows, xyz_count, timestamp) VALUES (".$ij_cols.",".$ij_rows.","$xyz_count.","$timestamp.")")) {
+if (!$conn->query("INSERT INTO tango (ij_cols, ij_rows, xyz_count, timestamp) VALUES (".$ij_cols.",".$ij_rows.",".$xyz_count.","$timestamp.")")) {
     syslog(LOG_DEBUG, "Data insert failed: (" . $conn->errno . ") " . $conn->error);
 }
 
