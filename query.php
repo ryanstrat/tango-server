@@ -11,8 +11,12 @@ $mysqli = new mysqli($hostname, $username, $password, "mhacksv");
 $stmt = $mysqli->stmt_init();
 $stmt = $mysqli->prepare("SELECT xyz_count, xyz_parcel, timestamp FROM tango ORDER BY timestamp DESC LIMIT 1");
 $stmt->execute();
+$stmt->bind_result($xyz_count, $xyz_parcel, $timestamp);
 $res = $stmt->fetch();
-//$row = $res->fetch_assoc();
+
+echo $xyz_count."\n\n";
+echo $xyz_parcel."\n\n";
+echo $timestamp;
 
 //printf("id = %s (%s)\n", $row['id'], gettype($row['id']));
 //printf("label = %s (%s)\n", $row['label'], gettype($row['label']));
