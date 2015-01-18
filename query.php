@@ -10,7 +10,7 @@ $mysqli = new mysqli($hostname, $username, $password, "mhacksv");
 
 
 $result = $mysqli->query("SELECT xyz_count, xyz_parcel, timestamp FROM tango ORDER BY timestamp DESC LIMIT 1");
-var_dump $result;
+var_dump($result);
 
 echo $xyz_count."<br>";
 echo $xyz_parcel."<br>";
