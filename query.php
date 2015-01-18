@@ -14,8 +14,8 @@ $stmt->execute();
 $stmt->bind_result($xyz_count, $xyz_parcel, $timestamp);
 $res = $stmt->fetch();
 
-echo $xyz_count."\n\n";
-echo $xyz_parcel."\n\n";
+echo $xyz_count."<br>";
+echo $xyz_parcel."<br>";
 echo $timestamp;
 
 //printf("id = %s (%s)\n", $row['id'], gettype($row['id']));
