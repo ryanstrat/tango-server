@@ -10,15 +10,9 @@ $mysqli = new mysqli($hostname, $username, $password, "mhacksv");
 
 
 if($result = $mysqli->query("SELECT xyz_count, xyz_parcel, timestamp FROM tango ORDER BY timestamp DESC LIMIT 1;")) {
-    $obj = $result->fetch_object()
+    $obj = $result->fetch_object();
     echo json_encode(obj);
 }
-
-var_dump($result);
-
-
-//printf("id = %s (%s)\n", $row['id'], gettype($row['id']));
-//printf("label = %s (%s)\n", $row['label'], gettype($row['label']));
 
 $stmt->close();
 
