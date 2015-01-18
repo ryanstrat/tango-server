@@ -24,7 +24,7 @@ if (!($stmt = $mysqli->prepare("INSERT INTO tango (xyz_count, xyz_parcel, timest
 }
 
 /* Prepared statement, stage 2: bind and execute */
-$stmt->bind_param("i", $xyz_count, "s", $xyz_parcel, "d", $timestamp);
+$stmt->bind_param("isd", $xyz_count, $xyz_parcel, $timestamp);
 //$stmt->bind_param("s", $xyz_parcel);
 //$stmt->bind_param("d", $timestamp);
 
