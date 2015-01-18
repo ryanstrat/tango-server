@@ -8,6 +8,7 @@ $hostname = "192.168.1.51";
 
 $mysqli = new mysqli($hostname, $username, $password, "mhacksv");
 
+$stmt = $mysqli->stmt_init();
 $stmt = $mysqli->prepare("SELECT xyz_count, xyz_parcel, timestamp FROM tango ORDER BY timestamp DESC LIMIT 1");
 $stmt->execute();
 $res = $stmt->get_result();
