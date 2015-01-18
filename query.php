@@ -8,10 +8,16 @@ $hostname = "192.168.1.51";
 
 $mysqli = new mysqli($hostname, $username, $password, "mhacksv");
 
-
-if($result = $mysqli->query("SELECT xyz_count, xyz_parcel, timestamp FROM tango ORDER BY id DESC LIMIT 1;")) {
-    $obj = $result->fetch_object();
-    echo json_encode($obj);
+if($_GET['q']) {
+    if($result = $mysqli->query("SELECT xyz_count, xyz_parcel, timestamp, id FROM tango WHERE id=".$_GET['q']."ORDER BY id DESC LIMIT 1;")) {
+        $obj = $result->fetch_object();
+        echo json_encode($obj);
+    }
+} else {
+    if($result = $mysqli->query("SELECT xyz_count, xyz_parcel, timestamp, id FROM tango ORDER BY id DESC LIMIT 1;")) {
+        $obj = $result->fetch_object();
+        echo json_encode($obj);
+    }
 }
 
 $mysqli->close();
