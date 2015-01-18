@@ -30,3 +30,5 @@ $stmt->close();
 $mysqli->close();
 
 closelog();
+
+?>

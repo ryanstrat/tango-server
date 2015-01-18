@@ -11,7 +11,7 @@ $mysqli = new mysqli($hostname, $username, $password, "mhacksv");
 
 if($result = $mysqli->query("SELECT xyz_count, xyz_parcel, timestamp FROM tango ORDER BY timestamp DESC LIMIT 1;")) {
     $obj = $result->fetch_object();
-    echo json_encode(obj);
+    echo json_encode($obj);
 }
 
 $stmt->close();
@@ -19,3 +19,5 @@ $stmt->close();
 $mysqli->close();
 
 closelog();
+
+?>
